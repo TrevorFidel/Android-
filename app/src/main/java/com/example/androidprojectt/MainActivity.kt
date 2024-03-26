@@ -45,6 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androidprojectt.ui.theme.AndroidProjectTTheme
 
+/// Main Activity consists of the phone app display on your Android device.
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +53,7 @@ class MainActivity : ComponentActivity() {
             AndroidProjectTTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
+//  Modifier is a styling device its called when styling is required.
                     modifier = Modifier
                         .background(color = Color.Cyan)
                         .fillMaxSize(),
@@ -82,34 +84,45 @@ class MainActivity : ComponentActivity() {
 //                            FontWeight.W300,
 //                            TextAlign.Center)
                         ImageComponent2()
-                        TextComponent(value = "Hey there Please register ",
+                        TextComponent(value = "Hey there! Please register ",
+//  This another styling mechanism that does not require calling the modifier.
                             22.sp,
                             Color.DarkGray,
                             FontFamily.Monospace,
                             FontWeight.Bold,
                             TextAlign.Center)
-                        Spacer(modifier = Modifier.height(40.dp))
+                        Spacer(modifier = Modifier.height(10.dp))
                         TextFieldComponent("Enter your Name")
-                        Spacer(modifier = Modifier.height(40.dp))
+                        Spacer(modifier = Modifier.height(10.dp))
                         TextFieldComponent("Enter your Email")
-                        Spacer(modifier = Modifier.height(40.dp))
+                        Spacer(modifier = Modifier.height(10.dp))
                         TextFieldComponent("Enter your Location")
-                        Spacer(modifier = Modifier.height(40.dp))
+                        Spacer(modifier = Modifier.height(10.dp))
                         TextFieldComponent("Enter your Password")
-                        Spacer(modifier = Modifier.height(40.dp))
+//  A Spacer is used to place a gap between features/input in the application
+//  NB: A Modifier.height is called to play out with the required space length required.
+                        Spacer(modifier = Modifier.height(10.dp))
                         CheckboxComponent(value ="I have read and agreed on the company policies and regulations")
                         Button(onClick = { /*TODO*/ },
                             modifier= Modifier.fillMaxWidth()) {
-                            Text( modifier = Modifier.padding(15.dp),
+                            Text( modifier = Modifier.padding(5.dp),
                                 text = "REGISTER HERE")
                         }
-                        Spacer(modifier = Modifier.height(40.dp))
+                        Spacer(modifier = Modifier.height(10.dp))
                         Button(onClick = {
                                          val intent = Intent(this@MainActivity,LoginActivity::class.java)
                         startActivity(intent)},
                             modifier= Modifier.fillMaxWidth()) {
                             Text( modifier = Modifier.padding(15.dp),
-                                text = "LOGIN HERE")
+                                text = "LOGIN")
+                        }
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Button(onClick = {
+                            val intent = Intent(this@MainActivity,ScrollActivity::class.java)
+                            startActivity(intent) },
+                            modifier= Modifier.fillMaxWidth()) {
+                            Text( modifier = Modifier.padding(15.dp),
+                                text = "BACKGROUND")
                         }
                     }
 
@@ -119,6 +132,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
+/// A composable function is an algorithim that is later called out for display.
 fun HelloClient(name: String){
 //    Text(text = "Good afternoon $name")
     TextComponent(value = ("Good afternoon $name"),
@@ -129,6 +143,8 @@ fun HelloClient(name: String){
         TextAlign.Center)
 }
 @Preview(showBackground = true, showSystemUi = true)
+// A preview composable function display your application on the PC. Hence one is required
+// to do the same piece of work from both the Main function and the preview
 @Composable
 fun HelloClientPreview(){
     Column(modifier = (Modifier
@@ -150,7 +166,7 @@ fun HelloClientPreview(){
 //            FontWeight.Bold,
 //            TextAlign.Center)
         ImageComponent2()
-        TextComponent(value = "Hey there Please register ",
+        TextComponent(value = "Hey there! Please register ",
             22.sp,
             Color.DarkGray,
             FontFamily.Monospace,
@@ -175,7 +191,7 @@ fun HelloClientPreview(){
         Button(onClick = { /*TODO*/ },
             modifier= Modifier.fillMaxWidth()) {
             Text( modifier = Modifier.padding(15.dp),
-                text = "LOGIN HERE")
+                text = "LOGIN")
         }
 
     }
