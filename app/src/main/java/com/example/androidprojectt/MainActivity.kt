@@ -102,7 +102,7 @@ class MainActivity : ComponentActivity() {
 //  A Spacer is used to place a gap between features/input in the application
 //  NB: A Modifier.height is called to play out with the required space length required.
                         Spacer(modifier = Modifier.height(10.dp))
-                        CheckboxComponent(value ="I have read and agreed on the company policies and regulations")
+                        CheckboxComponent(value ="I have read 0and agreed on the company policies and regulations")
                         Button(onClick = { /*TODO*/ },
                             modifier= Modifier.fillMaxWidth()) {
                             Text( modifier = Modifier.padding(5.dp),
