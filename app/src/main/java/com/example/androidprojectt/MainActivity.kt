@@ -62,9 +62,11 @@ class MainActivity : ComponentActivity() {
 //                    HelloClient("Fidel")
 //                    SecondLine()
 //                    ThirdLine()
-                    Column(modifier = (Modifier
-                        .clip(shape = RoundedCornerShape(20.dp))
-                        .border(width = 2.dp, color = Color.Black))) {
+                    Column(
+                        modifier = (Modifier
+                            .clip(shape = RoundedCornerShape(20.dp))
+                            .border(width = 2.dp, color = Color.Black))
+                    ) {
 //                        TextComponent(value = "Hey there",
 //                            22.sp,
 //                            Color.Black,
@@ -84,13 +86,15 @@ class MainActivity : ComponentActivity() {
 //                            FontWeight.W300,
 //                            TextAlign.Center)
                         ImageComponent2()
-                        TextComponent(value = "Hey there! Please register ",
+                        TextComponent(
+                            value = "Hey there! Please register ",
 //  This another styling mechanism that does not require calling the modifier.
                             22.sp,
                             Color.DarkGray,
                             FontFamily.Monospace,
                             FontWeight.Bold,
-                            TextAlign.Center)
+                            TextAlign.Center
+                        )
                         Spacer(modifier = Modifier.height(10.dp))
                         TextFieldComponent("Enter your Name")
                         Spacer(modifier = Modifier.height(10.dp))
@@ -102,54 +106,101 @@ class MainActivity : ComponentActivity() {
 //  A Spacer is used to place a gap between features/input in the application
 //  NB: A Modifier.height is called to play out with the required space length required.
                         Spacer(modifier = Modifier.height(10.dp))
-                        CheckboxComponent(value ="I have read 0and agreed on the company policies and regulations")
-                        Button(onClick = { /*TODO*/ },
-                            modifier= Modifier.fillMaxWidth()) {
-                            Text( modifier = Modifier.padding(5.dp),
-                                text = "REGISTER HERE")
+                        CheckboxComponent(value = "I have read 0and agreed on the company policies and regulations")
+                        Button(
+                            onClick = { /*TODO*/ },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(12.dp),
+                                text = "REGISTER HERE"
+                            )
                         }
                         Spacer(modifier = Modifier.height(10.dp))
-                        Button(onClick = {
-                                         val intent = Intent(this@MainActivity,LoginActivity::class.java)
-                        startActivity(intent)},
-                            modifier= Modifier.fillMaxWidth()) {
-                            Text( modifier = Modifier.padding(15.dp),
-                                text = "LOGIN")
+                        Button(
+                            onClick = {
+                                val intent = Intent(this@MainActivity, LoginActivity::class.java)
+                                startActivity(intent)
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(12.dp),
+                                text = "LOGIN"
+                            )
                         }
                         Spacer(modifier = Modifier.height(10.dp))
-                        Button(onClick = {
-                            val intent = Intent(this@MainActivity,ScrollActivity::class.java)
-                            startActivity(intent) },
-                            modifier= Modifier.fillMaxWidth()) {
-                            Text( modifier = Modifier.padding(15.dp),
-                                text = "BACKGROUND")
+                        Button(
+                            onClick = {
+                                val intent = Intent(this@MainActivity, ScrollActivity::class.java)
+                                startActivity(intent)
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(12.dp),
+                                text = "BACKGROUND"
+                            )
                         }
-                    }
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Button(
+                            onClick = {
+                                val intent =
+                                    Intent(this@MainActivity, TopBarAppActivity::class.java)
+                                startActivity(intent)
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(12.dp),
+                                text = "TOP BAR"
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Button(
+                            onClick = {
+                                val intent =
+                                    Intent(this@MainActivity,BottomAppActivity::class.java)
+                                startActivity(intent)
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                modifier = Modifier.padding(12.dp),
+                                text = "BOTTOM BAR"
+                            )
+                        }
 
+                    }
                 }
             }
         }
     }
-}
-@Composable
+
+    @Composable
 /// A composable function is an algorithim that is later called out for display.
-fun HelloClient(name: String){
+    fun HelloClient(name: String) {
 //    Text(text = "Good afternoon $name")
-    TextComponent(value = ("Good afternoon $name"),
-        22.sp,
-        Color.Green,
-        FontFamily.Monospace,
-        FontWeight.Bold,
-        TextAlign.Center)
-}
-@Preview(showBackground = true, showSystemUi = true)
+        TextComponent(
+            value = ("Good afternoon $name"),
+            22.sp,
+            Color.Green,
+            FontFamily.Monospace,
+            FontWeight.Bold,
+            TextAlign.Center
+        )
+    }
+
+    @Preview(showBackground = true, showSystemUi = true)
 // A preview composable function display your application on the PC. Hence one is required
 // to do the same piece of work from both the Main function and the preview
-@Composable
-fun HelloClientPreview(){
-    Column(modifier = (Modifier
-        .clip(shape = RoundedCornerShape(20.dp))
-        .border(width = 2.dp, color = Color.Black))) {
+    @Composable
+    fun HelloClientPreview() {
+        Column(
+            modifier = (Modifier
+                .clip(shape = RoundedCornerShape(20.dp))
+                .border(width = 2.dp, color = Color.Black))
+        ) {
 //        HelloClient("Fidel")
 //        SecondLine()
 //        ThirdLine()
@@ -165,106 +216,127 @@ fun HelloClientPreview(){
 //            FontFamily.Cursive,
 //            FontWeight.Bold,
 //            TextAlign.Center)
-        ImageComponent2()
-        TextComponent(value = "Hey there! Please register ",
-            22.sp,
-            Color.DarkGray,
-            FontFamily.Monospace,
-            FontWeight.Bold,
-            TextAlign.Center)
-        Spacer(modifier = Modifier.height(20.dp))
-        TextFieldComponent("Enter your Name")
-        Spacer(modifier = Modifier.height(30.dp))
-        TextFieldComponent("Enter your Email")
-        Spacer(modifier = Modifier.height(30.dp))
-        TextFieldComponent("Enter your Location")
-        Spacer(modifier = Modifier.height(30.dp))
-        TextFieldComponent("Enter your Password")
-        Spacer(modifier = Modifier.height(30.dp))
-        CheckboxComponent(value ="I have read and agreed on the company policies and regulations")
-        Button(onClick = { /*TODO*/ },
-            modifier = Modifier.fillMaxWidth()) {
-            Text( modifier = Modifier.padding(15.dp),
-                text = "REGISTER HERE")
+            ImageComponent2()
+            TextComponent(
+                value = "Hey there! Please register ",
+                22.sp,
+                Color.DarkGray,
+                FontFamily.Monospace,
+                FontWeight.Bold,
+                TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(20.dp))
+            TextFieldComponent("Enter your Name")
+            Spacer(modifier = Modifier.height(30.dp))
+            TextFieldComponent("Enter your Email")
+            Spacer(modifier = Modifier.height(30.dp))
+            TextFieldComponent("Enter your Location")
+            Spacer(modifier = Modifier.height(30.dp))
+            TextFieldComponent("Enter your Password")
+            Spacer(modifier = Modifier.height(30.dp))
+            CheckboxComponent(value = "I have read and agreed on the company policies and regulations")
+            Button(
+                onClick = { /*TODO*/ },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    modifier = Modifier.padding(15.dp),
+                    text = "REGISTER HERE"
+                )
+            }
+            Spacer(modifier = Modifier.height(30.dp))
+            Button(
+                onClick = { /*TODO*/ },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    modifier = Modifier.padding(15.dp),
+                    text = "LOGIN"
+                )
+            }
+
         }
-        Spacer(modifier = Modifier.height(30.dp))
-        Button(onClick = { /*TODO*/ },
-            modifier= Modifier.fillMaxWidth()) {
-            Text( modifier = Modifier.padding(15.dp),
-                text = "LOGIN")
-        }
+    }
+
+    @Composable
+    fun SecondLine() {
+        Text(text = "Successfully logged In")
+    }
+
+    @Composable
+    fun ThirdLine() {
+        Text(text = "Welcome back")
+    }
+
+    @Composable
+    fun TextComponent(
+        value: String,
+        size: TextUnit,
+        colorValue: Color,
+        fontFamilyValue: FontFamily,
+        fontWeightValue: FontWeight,
+        textAlignValue: TextAlign,
+
+        ) {
+        Text(
+            modifier = Modifier
+                .background(Color.Cyan)
+                .padding(10.dp)
+                .fillMaxWidth()
+                .wrapContentWidth(),
+            text = value,
+            fontSize = size,
+            color = colorValue,
+            fontFamily = fontFamilyValue,
+            fontWeight = fontWeightValue,
+            textAlign = textAlignValue
+
+
+        )
 
     }
-}
 
-@Composable
-fun SecondLine(){
-    Text(text = "Successfully logged In")
-}
-@Composable
-fun ThirdLine(){
-    Text(text = "Welcome back")
-}
-@Composable
-fun TextComponent(value: String,
-                  size:TextUnit,
-                  colorValue: Color,
-                  fontFamilyValue: FontFamily,
-                  fontWeightValue: FontWeight,
-                  textAlignValue: TextAlign,
-
-                 ){
-    Text(modifier = Modifier
-        .background(Color.Cyan)
-        .padding(10.dp)
-        .fillMaxWidth()
-        .wrapContentWidth(),
-        text = value,
-        fontSize = size,
-        color = colorValue,
-        fontFamily = fontFamilyValue,
-        fontWeight = fontWeightValue,
-        textAlign = textAlignValue
-
-
-    )
-
-}
-@Composable
-fun TextFieldComponent(mylabel:String){
-    var text by remember{ mutableStateOf(value = "") }
-    TextField(modifier = Modifier.fillMaxWidth(),
-        value = text, onValueChange ={
-        newText -> text = newText},
-        label = { TextFieldLabels(value = mylabel)})
-}
-@Composable
-fun TextFieldLabels(value: String){
-    Text(text = value)
-}
-@Composable
-fun CheckboxComponent(value: String){
-    Row (modifier = Modifier
-        .fillMaxWidth()
-        .heightIn(56.dp)
-        .padding(16.dp),
-        verticalAlignment = Alignment.CenterVertically
-        ){
-        val checkedState = remember {
-            mutableStateOf(value = false)
-        }
-        Checkbox(checked = checkedState.value, onCheckedChange ={
-
-        } )
-        TextFieldLabels(value = value)
+    @Composable
+    fun TextFieldComponent(mylabel: String) {
+        var text by remember { mutableStateOf(value = "") }
+        TextField(modifier = Modifier.fillMaxWidth(),
+            value = text, onValueChange = { newText -> text = newText },
+            label = { TextFieldLabels(value = mylabel) })
     }
-}
-@Composable
-fun ImageComponent2(){
-    Image(modifier = Modifier
-        .wrapContentHeight()
-        .fillMaxWidth()
-        .height(100.dp),
-        painter = painterResource(id = R.drawable.index) ,
-        contentDescription = "logo image" )
+
+    @Composable
+    fun TextFieldLabels(value: String) {
+        Text(text = value)
+    }
+
+    @Composable
+    fun CheckboxComponent(value: String) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .heightIn(56.dp)
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            val checkedState = remember {
+                mutableStateOf(value = false)
+            }
+            Checkbox(checked = checkedState.value, onCheckedChange = {
+
+            })
+            TextFieldLabels(value = value)
+        }
+    }
+
+    @Composable
+    fun ImageComponent2() {
+        Image(
+            modifier = Modifier
+                .wrapContentHeight()
+                .fillMaxWidth()
+                .height(100.dp),
+            painter = painterResource(id = R.drawable.index),
+            contentDescription = "logo image"
+        )
+    }
 }
