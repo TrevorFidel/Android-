@@ -146,14 +146,14 @@ class MainActivity : ComponentActivity() {
                         Button(
                             onClick = {
                                 val intent =
-                                    Intent(this@MainActivity, TopBarAppActivity::class.java)
+                                    Intent(this@MainActivity, AssessmentActivity::class.java)
                                 startActivity(intent)
                             },
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
                                 modifier = Modifier.padding(12.dp),
-                                text = "TOP BAR"
+                                text = "ASSESSMENT"
                             )
                         }
                         Spacer(modifier = Modifier.height(10.dp))

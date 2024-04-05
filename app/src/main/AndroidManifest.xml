@@ -13,6 +13,11 @@
         android:theme="@style/Theme.AndroidProjectT"
         tools:targetApi="31">
         <activity
+            android:name=".AssesmentActivity"
+            android:exported="false"
+            android:label="@string/title_activity_assesment"
+            android:theme="@style/Theme.AndroidProjectT" />
+        <activity
             android:name=".BottomAppActivity"
             android:exported="false"
             android:label="@string/title_activity_bottom_app"

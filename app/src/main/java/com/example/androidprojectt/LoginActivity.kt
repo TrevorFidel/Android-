@@ -92,15 +92,16 @@ class LoginActivity : ComponentActivity() {
                                 text = "REGISTER HERE")
                         }
                         Spacer(modifier = Modifier.height(15.dp))
-                        Button(onClick = { /*TODO*/ },
+                        Button(onClick = { val intent = Intent(this@LoginActivity,TopBarAppActivity::class.java)
+                            startActivity(intent)},
                             colors = ButtonDefaults.buttonColors(Color.Green),
                             modifier= Modifier.fillMaxWidth()) {
                             Text( modifier = Modifier.padding(10.dp),
-                                text = "LOGIN HERE")
+                                text = "TOP BAR")
                         }
                         Spacer(modifier = Modifier.height(10.dp))
                         Button(onClick = {
-                                         val intent = Intent(this@LoginActivity,CardActivity::class.java)
+                            val intent = Intent(this@LoginActivity,CardActivity::class.java)
                             startActivity(intent)
                         },
                             colors = ButtonDefaults.buttonColors(Color.Green),

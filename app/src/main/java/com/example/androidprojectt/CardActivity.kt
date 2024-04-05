@@ -21,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androidprojectt.ui.theme.AndroidProjectTTheme
 
@@ -47,10 +46,11 @@ class CardActivity : ComponentActivity() {
     }
 }
 @Composable
-fun ImageCard(painter: Painter,
-           contentDescription: String,
-           title : String,
-           modifier: Modifier){
+fun ImageCard(
+    painter: Painter,
+    contentDescription: String,
+    title: String,
+    modifier: Modifier){
     Card(
 //        modifier = Modifier.fillMaxWidth(),
           shape = RoundedCornerShape(15.dp),

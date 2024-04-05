@@ -8,4 +8,5 @@
     <string name="title_activity_top_bar_app">TopBarAppActivity</string>
     <string name="title_activity_indicators">Indicators</string>
     <string name="title_activity_bottom_app">BottomAppActivity</string>
+    <string name="title_activity_assesment">AssesmentActivity</string>
 </resources>
